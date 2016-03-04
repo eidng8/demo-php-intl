@@ -1,0 +1,30 @@
+###################################################
+# normalize line endings
+###################################################
+
+# config files
+.*      eol=lf
+*.conf  eol=lf
+*.yml   eol=lf
+
+# sources files
+*.php   eol=lf
+*.js    eol=lf
+*.css   eol=lf
+*.s?ss  eol=lf
+*.less  eol=lf
+*.xml   eol=lf
+*.htm?  eol=lf
+*.sh    eol=lf
+
+# text files
+*.md    eol=lf
+*.txt   eol=lf
+
+# data files
+*.json  eol=lf
+*.map   eol=lf
+
+# windows files
+*.bat   eol=crlf
+*.cmd   eol=crlf
