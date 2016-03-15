@@ -20,11 +20,11 @@
  * @link      http://www.tpages.com
  */
 
-$shortopts = 'PCRDGTVnvsc:r:l:d:m:';
+$shortopts = 'PCRDGTVnvsc:r:l:d:m:L:';
 $longopts = [
   'parse', 'script-tag', 'region-tag', 'default-language', 'region-name',
   'script-name', 'variant-name', 'name', 'variant', 'system', 'script:',
-  'region:', 'locale:', 'display:', 'match:'
+  'region:', 'locale:', 'display:', 'match:', 'lookup:'
 ];
 
 if(!($opts = getopt($shortopts, $longopts))
@@ -51,7 +51,8 @@ The following options use Locale::composeLocale():
 -r, --region <country code>     Specifies the input region.
 
 The following option uses Locale::filterMatches():
--m, --match <language tag>      Check if the language tag specified by -l and/or
+-m, --match <language tag>      Check if the language tag specified by -l or
+                                -s matches the given language tag.
 
 The following option uses Locale::getAllVariants():
 -v, --variant                   Shows the variants for the input locale.
@@ -85,10 +86,20 @@ The following option uses Locale::getScript():
 The following option uses Locale::parseLocale():
 -P, --parse                     Shows the input locale ID subtag elements.
 
+The following option uses Locale::parseLocale():
+-L, --lookup                    Shows the input locale ID subtag elements.
+
 
 Example:
 
+Show information of locale:
+
 ./locale.php -l zh-hans -v -d zh-hant -GTVCRD
+
+
+Lookup:
+
+./locale.php -l zh-cn -L "zh-tw,zh-hans"
 
 
 EOT
@@ -307,6 +318,18 @@ if(!empty($opts['m']))
   echo Locale::filterMatches($locale, $opts['m']) ? ' matches '
     : ' doesn\'t match ';
   die($opts['m'] . PHP_EOL);
+}
+
+/*
+ *  opt --lookup
+ */
+if(!empty($opts['L']))
+{
+  $tags = explode(',', $opts['L']);
+  echo "Locale::lookup():\t\t$locale";
+  echo "\tfrom: {$opts['L']}\n\t\t\t\t\tgets: ";
+  echo Locale::lookup($tags, $locale);
+  die(PHP_EOL);
 }
 
 echo "Locale::getDisplayLanguage():\t";
