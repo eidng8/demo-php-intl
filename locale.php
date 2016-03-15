@@ -43,46 +43,46 @@ Script codes are from ISO-15924.
 -l, --locale <language code>    ISO code to used as input.
 -s, --system                    Get (PHP) system's default locale.
 
-The follow options uses Locale::getDisplayLanguage():
+The following option uses Locale::getDisplayLanguage():
 -d, --display <language code>   ISO code to used while display.
 
-The follow options uses Locale::composeLocale():
+The following options use Locale::composeLocale():
 -c, --script <script code>      Specifies the input script.
 -r, --region <country code>     Specifies the input region.
 
-The follow options uses Locale::filterMatches():
+The following option uses Locale::filterMatches():
 -m, --match <language tag>      Check if the language tag specified by -l and/or
 
-The follow options uses Locale::getAllVariants():
+The following option uses Locale::getAllVariants():
 -v, --variant                   Shows the variants for the input locale.
 
-The follow options uses Locale::getDisplayName():
+The following option uses Locale::getDisplayName():
 -n, --name                      Shows an appropriately localized display name
                                 for the input locale.
 
-The follow options uses Locale::getDisplayRegion():
+The following option uses Locale::getDisplayRegion():
 -G, --region-name               Shows an appropriately localized display name
                                 for region in the input locale.
 
-The follow options uses Locale::getDisplayScript():
+The following option uses Locale::getDisplayScript():
 -T, --script-name               Shows an appropriately localized display name
                                 for script in the input locale.
 
-The follow options uses Locale::getDisplayVariant():
+The following option uses Locale::getDisplayVariant():
 -V, --variant-name              Shows an appropriately localized display name
                                 for variant in the input locale.
 
-The follow options uses Locale::getPrimaryLanguage():
+The following option uses Locale::getPrimaryLanguage():
 -D, --default-language          Shows the code of primary language for the
                                 input locale.
 
-The follow options uses Locale::getRegion():
+The following option uses Locale::getRegion():
 -R, --region-tag               Shows the region code for the input locale.
 
-The follow options uses Locale::getScript():
+The following option uses Locale::getScript():
 -C, --script-tag               Shows the script code for the input locale.
 
-The follow options uses Locale::parseLocale():
+The following option uses Locale::parseLocale():
 -P, --parse                     Shows the input locale ID subtag elements.
 
 
